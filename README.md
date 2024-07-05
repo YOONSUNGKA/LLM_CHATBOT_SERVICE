@@ -1,9 +1,9 @@
-다음은 제공된 파일과 AWS ECR에 컨테이너 이미지를 업로드하고 AWS App Runner를 사용하여 실행하는 과정을 포함한 `README.md`입니다:
+다음은 각 첨부 파일의 목적과 사용 방법을 설명하는 `README.md` 파일입니다:
 
 ```markdown
 # LangChain 애플리케이션
 
-이 프로젝트는 LangChain 기반 애플리케이션입니다. 이 설정은 Docker 컨테이너를 빌드하고, 이를 AWS ECR에 업로드한 후 AWS App Runner를 사용하여 배포합니다.
+이 프로젝트는 LangChain 기반 애플리케이션입니다. 설정에는 Docker 컨테이너를 빌드하고 AWS ECR에 업로드한 후 AWS App Runner를 사용하여 배포하는 과정이 포함되어 있습니다.
 
 ## 프로젝트 구조
 
@@ -65,6 +65,8 @@ docker-compose up --build
 
 ### `docker-compose.yaml`
 
+Docker Compose 파일로, 여러 컨테이너를 정의하고 관리합니다. 이 파일은 `langchain`이라는 서비스를 정의하며, 로컬 환경에서의 개발 및 테스트를 용이하게 합니다.
+
 ```yaml
 version: '3.8'
 services:
@@ -85,7 +87,21 @@ networks:
     driver: bridge
 ```
 
+### `Dockerfile.cloud`
+
+클라우드 환경에서 사용될 Docker 이미지를 빌드하기 위한 Dockerfile입니다. 이 파일을 사용하여 애플리케이션을 컨테이너화합니다.
+
+### `main.py`
+
+애플리케이션의 메인 진입점으로, FastAPI 서버를 실행합니다. 이 파일에서 애플리케이션의 라우팅과 비즈니스 로직을 정의합니다.
+
 ### `requirements.txt`
+
+애플리케이션이 의존하는 Python 패키지를 나열한 파일입니다. 다음 명령어를 사용하여 필요한 패키지를 설치할 수 있습니다:
+
+```bash
+pip install -r requirements.txt
+```
 
 ```plaintext
 fastapi==0.110.3
@@ -113,4 +129,4 @@ httpx>=0.27.0
 이 설명서를 통해 프로젝트를 설정하고 AWS에 배포할 수 있습니다. 추가적인 도움이 필요하면, 문서를 참조하거나 담당자에게 문의하세요.
 ```
 
-이 `README.md` 파일은 프로젝트를 설정하고 사용하는 방법을 안내합니다. 필요에 따라 파일 내용을 조정해 주세요.
+이 `README.md` 파일은 각 파일의 목적과 전체 설정 및 배포 과정을 안내합니다. 필요에 따라 파일 내용을 조정해 주세요.
