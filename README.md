@@ -1,6 +1,6 @@
 # DriveChat AI Assistant
 
-DriveChat은 차량 내 AI 비서 시스템으로, 차량 정보 제공, 음악 재생, 그리고 성수동 맛집 추천 기능을 제공합니다. FastAPI를 기반으로 구축되었으며, 자연어 처리를 위해 LangChain과 OpenAI의 GPT-4를 활용합니다.
+DriveChat은 차량 내 AI 비서 시스템으로, 차량 정보 제공, 음악 재생, 그리고 성수동 맛집 추천 기능을 제공합니다. FastAPI를 기반으로 구축되었으며, 자연어 처리를 위해 LangChain과 OpenAI의 GPT-4o를 활용합니다.
 
 ## 주요 기능
 
@@ -12,7 +12,7 @@ DriveChat은 차량 내 AI 비서 시스템으로, 차량 정보 제공, 음악 
 
 - FastAPI
 - LangChain
-- OpenAI GPT-4
+- OpenAI GPT-4o
 - YouTube API
 - Docker
 - Python 3.9
